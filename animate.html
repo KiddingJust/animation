@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .wrapper {
+        width: 100%;
+        height: 100vh;
+        background-color: cornsilk;
+    }
+    .sample {
+        position: absolute;
+        top: 100px;
+        left: 100px;
+    }
+
+</style>
+
+<div class = 'wrapper'>
+<img class="sample" src="img/a7.jpg">
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+    $('.wrapper').on('click', function(e){
+
+        var xPos = e.pageX + "px";
+        var yPos = e.pageY + "px";
+
+        console.log(xPos, yPos);
+
+        // 클릭한 곳으로 이미지 이동하도록. 파라미터(액션에 따라 다른듯) - 시간 - callback
+        $('.sample').animate({left:xPos, top: yPos}, 0, function(){
+            console.log("move completed...");
+        });
+        console.log(e);
+
+    });
+
+</script>
+
+</body>
+</html>
